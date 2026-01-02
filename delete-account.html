@@ -1,1 +1,321 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de Compte - Yigui Mobile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #2E7D32;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E8F5E9;
+        }
+        
+        .card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .warning-box {
+            background-color: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .warning-box h3 {
+            color: #E65100;
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background-color: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .info-box h3 {
+            color: #1565C0;
+            margin-bottom: 10px;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            padding: 15px 15px 15px 60px;
+            position: relative;
+            margin-bottom: 10px;
+            background: #F5F5F5;
+            border-radius: 10px;
+        }
+        
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .data-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .data-list li {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background: #FFEBEE;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .data-list li::before {
+            content: "✗";
+            position: absolute;
+            left: 12px;
+            color: #C62828;
+            font-weight: bold;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .contact-info a {
+            color: #1565C0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn-delete {
+            display: inline-block;
+            background: #C62828;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .btn-delete:hover {
+            background: #B71C1C;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🗑️ Suppression de Compte</h1>
+        <p>Yigui Mobile - Demande de suppression de compte et données</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>📋 Comment supprimer votre compte</h2>
+            <p>Vous pouvez demander la suppression de votre compte Yigui Mobile à tout moment. Voici les étapes à suivre :</p>
+            
+            <ol class="steps">
+                <li>Envoyez un email à <strong>douklifsa93@gmail.com</strong> avec l'objet "Demande de suppression de compte"</li>
+                <li>Indiquez le numéro de téléphone associé à votre compte</li>
+                <li>Précisez votre nom complet pour vérification</li>
+                <li>Attendez la confirmation de suppression (sous 7 jours ouvrables)</li>
+            </ol>
+        </div>
+        
+        <div class="card">
+            <h2>📧 Formulaire de demande par email</h2>
+            <p>Votre email doit contenir les informations suivantes :</p>
+            
+            <div class="info-box">
+                <h3>Modèle d'email</h3>
+                <p><strong>À :</strong> douklifsa93@gmail.com</p>
+                <p><strong>Objet :</strong> Demande de suppression de compte Yigui Mobile</p>
+                <p><strong>Corps du message :</strong></p>
+                <p style="font-style: italic; margin-left: 15px;">
+                    Bonjour,<br><br>
+                    Je souhaite supprimer mon compte Yigui Mobile.<br><br>
+                    Numéro de téléphone : [Votre numéro]<br>
+                    Nom complet : [Votre nom]<br><br>
+                    Cordialement.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🗂️ Données qui seront supprimées</h2>
+            <p>Lors de la suppression de votre compte, les données suivantes seront définitivement effacées :</p>
+            
+            <ul class="data-list">
+                <li>Informations personnelles (nom, prénom)</li>
+                <li>Numéro de téléphone</li>
+                <li>Code PIN de connexion</li>
+                <li>Historique des transactions</li>
+                <li>Liste des décodeurs favoris</li>
+                <li>Données de localisation (ville, quartier)</li>
+                <li>Préférences et paramètres de l'application</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h3>⚠️ Attention</h3>
+                <p>La suppression de votre compte est <strong>irréversible</strong>. Une fois supprimées, vos données ne pourront pas être récupérées. Assurez-vous de ne plus avoir de transactions en cours avant de demander la suppression.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>⏱️ Délai de traitement</h2>
+            <p>Votre demande sera traitée selon les délais suivants :</p>
+            
+            <div class="info-box">
+                <h3>Délais estimés</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Accusé de réception :</strong> Sous 48 heures</li>
+                    <li><strong>Vérification d'identité :</strong> 1 à 3 jours ouvrables</li>
+                    <li><strong>Suppression effective :</strong> Sous 7 jours ouvrables maximum</li>
+                    <li><strong>Confirmation finale :</strong> Email de confirmation envoyé après suppression</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📞 Nous contacter</h2>
+            
+            <div class="contact-box">
+                <h3>Service de suppression de compte</h3>
+                <div class="contact-info">
+                    <p>📧 Email : <a href="mailto:douklifsa93@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20Yigui%20Mobile">douklifsa93@gmail.com</a></p>
+                    <p>📱 Téléphone : <a href="tel:+224621091895">+224 621 091 895</a></p>
+                    <p>📍 Adresse : Nongo, Conakry, Guinée</p>
+                </div>
+                
+                <a href="mailto:douklifsa93@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20Yigui%20Mobile&body=Bonjour,%0A%0AJe souhaite supprimer mon compte Yigui Mobile.%0A%0ANuméro de téléphone : %0ANom complet : %0A%0ACordialement." class="btn-delete">
+                    📧 Envoyer une demande de suppression
+                </a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>❓ Questions fréquentes</h2>
+            
+            <p><strong>Q : Puis-je récupérer mon compte après suppression ?</strong></p>
+            <p style="margin-bottom: 15px;">R : Non, la suppression est définitive. Vous devrez créer un nouveau compte si vous souhaitez réutiliser l'application.</p>
+            
+            <p><strong>Q : Mes transactions en cours seront-elles remboursées ?</strong></p>
+            <p style="margin-bottom: 15px;">R : Assurez-vous de finaliser toutes vos transactions avant la suppression. Les transactions complétées ne sont pas remboursables.</p>
+            
+            <p><strong>Q : Combien de temps mes données sont-elles conservées après la demande ?</strong></p>
+            <p>R : Vos données sont supprimées définitivement dans un délai maximum de 7 jours ouvrables après validation de votre demande.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Yigui Mobile - Tous droits réservés</p>
+        <p>Développé par DOUKOURÉ SALIFOU</p>
+        <p><a href="https://doukoure2018.github.io/privacy-policy/" style="color: #4CAF50;">Politique de confidentialité</a></p>
+    </footer>
+</body>
+</html>
